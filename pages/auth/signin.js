@@ -1,6 +1,7 @@
 import { getProviders, signIn as signIntoProvider } from "next-auth/react";
 import Header from "./../../components/Header";
 
+/** @param {import('next').InferGetServerSidePropsType<typeof getServerSideProps> } props */
 function signIn({ providers }) {
   return (
     <>
@@ -15,7 +16,7 @@ function signIn({ providers }) {
           {Object.values(providers).map((provider) => (
             <div key={provider.name}>
               <button
-                className="p-3 bg-blue-500 rounded-lg text-white"
+                className="p-3 bg-transparent hover:bg-blue-500 rounded-lg text-blue-700 font-semibold hover:text-white border border-blue-500 hover:border-transparent"
                 onClick={() =>
                   signIntoProvider(provider.id, { callbackUrl: "/" })
                 }
