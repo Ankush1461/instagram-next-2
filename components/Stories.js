@@ -24,7 +24,7 @@ function Stories() {
           {suggestions.map((profile) => (
             <Story
               key={profile.id}
-              img={`https://avatars.dicebear.com/api/micah/${session.user.username}.svg`}
+              img={`https://avatars.dicebear.com/api/avataaars/${session.user.username}.svg`}
               username={profile.username}
             />
           ))}
