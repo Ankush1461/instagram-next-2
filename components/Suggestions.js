@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import faker from "faker";
+import { useSession } from "next-auth/react";
 
 function Suggestions() {
   const [suggestions, setSuggestions] = useState([]);
+  const { data: session } = useSession();
   useEffect(() => {
     const suggestions = [...Array(5)].map((_, i) => ({
       ...faker.helpers.contextualCard(),
@@ -25,7 +27,7 @@ function Suggestions() {
         >
           <img
             className="w-10 h-10 rounded-full border p-[2px]"
-            src={profile.avatar}
+            src={`https://avatars.dicebear.com/api/micah/${session.user.username}.svg`}
             alt=""
           />
           <div className="flex-1 ml-4">

@@ -17,19 +17,19 @@ function Stories() {
 
   return (
     <div>
-      <div className="flex space-x-2 p-6 bg-white mt-8 border-gray-200 border overflow-x-scroll scrollbar-thumb-black rounded-md">
-        {session && (
+      {session && (
+        <div className="flex space-x-2 p-6 bg-white mt-8 border-gray-200 border overflow-x-scroll scrollbar-thumb-black rounded-md">
           <Story img={session.user.image} username={session.user.username} />
-        )}
 
-        {suggestions.map((profile) => (
-          <Story
-            key={profile.id}
-            img={profile.avatar}
-            username={profile.username}
-          />
-        ))}
-      </div>
+          {suggestions.map((profile) => (
+            <Story
+              key={profile.id}
+              img={`https://avatars.dicebear.com/api/micah/${session.user.username}.svg`}
+              username={profile.username}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
