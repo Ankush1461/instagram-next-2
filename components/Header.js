@@ -59,7 +59,6 @@ function Header() {
         {/* Right Side */}
         <div className="flex items-center justify-end space-x-4">
           <HomeIcon className="navBtn" onClick={() => router.push("/")} />
-          <MenuIcon className="navBtn2 md:hidden" />
 
           {session ? (
             <>
